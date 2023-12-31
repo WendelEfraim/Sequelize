@@ -1,0 +1,28 @@
+<h1> Editando perfil de ({{user.name}})</h1>
+
+
+    <form action="/user/update" method="POST" class="form">
+
+    <input type="hidden" name="id" value="{{user.id}}">
+    <div class="form-control">
+        <label for="name">Nome</label>
+        <input type="text" name="name" placeholder="Digite seu nome aqui!"value="{{user.name}}">
+    </div>
+
+    <div class="form-control">
+        <label for="occupation">Profissão</label>
+        <input type="text" name="occupation" placeholder="Digite sua profissão!"value="{{user.occupation}}">
+    </div>
+
+    <div class="form-checkbox">
+        {{#if user.newsletter}}
+            <input type="checkbox" name="newsletter" checked>
+        {{else}}
+            <input type="checkbox" name="newsletter">
+        {{/if}}
+        <label for="newsletter"> Enviar promoções por E-mail.</label>
+    </div>
+
+    <input type="submit" value="Confirmar">
+
+    </form>
